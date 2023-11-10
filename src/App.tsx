@@ -8,10 +8,6 @@ import UserPosts from './components/UserPosts';
 
 function App() {
   return (
-    // <div>
-    //   <UserList />
-    // </div>
-
     <BrowserRouter>
     <Routes>
       <Route   path="/" element={<UserList />}/>

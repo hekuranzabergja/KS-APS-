@@ -1,0 +1,30 @@
+.searchInput{
+    width: 200px;
+    float: right;
+    margin: 5px;
+} 
+
+.cardPost {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.specificCard {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .cardPost {
+        grid-template-columns: 1fr; 
+    }
+}
+
+.tableOfUsers{
+    display: grid;
+    place-items: center;
+}

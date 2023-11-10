@@ -1,5 +1,7 @@
+import { Card, Spin } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react'
 import { useParams } from "react-router";
+import './style.css'
 
 type ResponseData = {
     limit: number;
@@ -28,16 +30,22 @@ function UserPosts() {
         }, []);
 
         if (isLoading) {
-            return <div>Loading ...</div>;
+            return <div><Spin/></div>;
           }
   return (
     <div>
 
-        <div>{posts?.map((post)=>{
+        <div className='cardPost'>{posts?.map((post)=>{
             return (
-                <div key={post.id}>{post.title}</div>
+                <Card title={post.title} bordered={true}  key={post.id} className="specificCard">
+                <p><strong>Body:</strong> {post.body}</p>
+                <p><strong>Reaction:</strong> {post.reactions}</p>
+                <p><strong>Tags:</strong> {post.tags}</p>
+              </Card>
             )
         })}</div>
+
+
     </div>
   )
 }
